@@ -1,28 +1,30 @@
 import { useState } from "react";
 
-function Navbar() {
+const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<nav className="bg-primary text-primary-text px-4 py-3 shadow-lg">
+		<nav className="bg-primary text-primary-text px-4 md:px-6 lg:px-24 py-3 shadow-lg">
+			{" "}
+			{/* Responsive padding */}
 			<div className="max-w-7xl mx-auto flex justify-between items-center">
 				{/* Logo */}
 				<a href="#" className="text-2xl font-heading hover:text-accent-blue">
-					AppName
+					Face Like
 				</a>
 
 				{/* Menu Items (Desktop) */}
 				<div className="hidden md:flex space-x-6">
-					<a href="#" className="font-sans hover:text-accent-blue">
+					<a href="#" className="font-sans hover:text-accent-blue text-base">
 						Home
 					</a>
-					<a href="#" className="font-sans hover:text-accent-blue">
+					<a href="#" className="font-sans hover:text-accent-blue text-base">
 						About
 					</a>
-					<a href="#" className="font-sans hover:text-accent-blue">
+					<a href="#" className="font-sans hover:text-accent-blue text-base">
 						Services
 					</a>
-					<a href="#" className="font-sans hover:text-accent-blue">
+					<a href="#" className="font-sans hover:text-accent-blue text-base">
 						Contact
 					</a>
 				</div>
@@ -48,31 +50,30 @@ function Navbar() {
 					</svg>
 				</button>
 			</div>
-
 			{/* Mobile Menu */}
 			{isOpen && (
 				<div className="md:hidden bg-secondary border-t border-gray-700">
 					<a
 						href="#"
-						className="block px-4 py-2 text-primary-text hover:bg-[#2a2a2a] hover:text-accent-blue"
+						className="block px-4 py-2 text-primary-text hover:bg-[#2a2a2a] hover:text-accent-blue text-base"
 					>
 						Home
 					</a>
 					<a
 						href="#"
-						className="block px-4 py-2 text-primary-text hover:bg-[#2a2a2a] hover:text-accent-blue"
+						className="block px-4 py-2 text-primary-text hover:bg-[#2a2a2a] hover:text-accent-blue text-base"
 					>
 						About
 					</a>
 					<a
 						href="#"
-						className="block px-4 py-2 text-primary-text hover:bg-[#2a2a2a] hover:text-accent-blue"
+						className="block px-4 py-2 text-primary-text hover:bg-[#2a2a2a] hover:text-accent-blue text-base"
 					>
 						Services
 					</a>
 					<a
 						href="#"
-						className="block px-4 py-2 text-primary-text hover:bg-[#2a2a2a] hover:text-accent-blue"
+						className="block px-4 py-2 text-primary-text hover:bg-[#2a2a2a] hover:text-accent-blue text-base"
 					>
 						Contact
 					</a>
@@ -80,6 +81,6 @@ function Navbar() {
 			)}
 		</nav>
 	);
-}
+};
 
 export default Navbar;
