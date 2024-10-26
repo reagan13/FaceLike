@@ -1,10 +1,17 @@
-import Men from "..//assets/face.png";
+import Men from "../assets/face.png";
+import { useNavigate } from "react-router-dom";
 
 const Scan = () => {
+	const navigate = useNavigate();
+
+	const openCaptureRight = () => {
+		navigate("/scan/capture");
+	};
+
 	return (
 		<div className="bg-black text-white min-h-screen flex flex-col">
 			{/* Title Section */}
-			<section className="flex flex-col items-center justify-center text-center pt-14 pb-5">
+			<section className="flex flex-col items-center justify-center text-center pt-16 pb-5">
 				<h1 className="text-4xl md:text-6xl font-heading mb-4">
 					Facial Feature Analysis
 				</h1>
@@ -15,14 +22,14 @@ const Scan = () => {
 			</section>
 
 			{/* Image Section */}
-			<section className="flex flex-col items-center mb-20 gap-10">
+			<section className="flex flex-col items-center mb-20">
 				<img
-					src={Men} // Replace with your actual image source
+					src={Men}
 					alt="Facial Analysis"
-					className="rounded-lg shadow-lg mb-4 h-96 w-auto" // Adjust height for portrait
+					className="rounded-lg shadow-lg mb-4 size-96"
 				/>
 				<button
-					onClick={() => console.log("Scan Started")} // Replace with your scan function
+					onClick={openCaptureRight}
 					className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition duration-300"
 				>
 					Begin Scan
@@ -40,7 +47,7 @@ const Scan = () => {
 					you.
 				</p>
 				<p className="text-center">
-					Whether it&apos; improving your skincare routine or enhancing your
+					Whether it&apos;s improving your skincare routine or enhancing your
 					features, our tool is here to help you discover your true potential.
 				</p>
 			</section>
