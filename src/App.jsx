@@ -6,14 +6,16 @@ import CaptureLeft from "./modal/CaptureLeft";
 import CaptureFront from "./modal/CaptureFront";
 import FloatingButtons from "./components/FloatingButtons";
 import Capture from "./modal/Capture";
+import RevealResultsDemo from "./pages/RevealResultDemo";
 const App = () => {
 	return (
 		<Router>
-			{/* <FloatingButtons /> */}
+			<FloatingButtons />
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/scan" element={<Scan />} />
 				<Route path="/scan/capture" element={<Capture />} />
+				<Route path="/reveal-results-demo" element={<RevealResultsDemo />} />
 				<Route path="/scan/right" element={<CaptureRight />} />
 				<Route path="/scan/left" element={<CaptureLeft />} />
 				<Route path="/scan/front" element={<CaptureFront />} />

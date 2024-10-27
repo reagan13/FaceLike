@@ -1,36 +1,23 @@
-import React, { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
 
-const Capture = () => {
+const Aw = () => {
 	const videoRef = useRef(null);
 	const captureRef = useRef(null);
 	const [capturedImage, setCapturedImage] = useState(null);
 	const [isCameraActive, setIsCameraActive] = useState(true);
-	const navigate = useNavigate();
 
-	const handleContinue = () => {
-		navigate("/reveal-results-demo", { state: { image: capturedImage } });
-		window.location.reload();
-	};
-
-	const handleBack = () => {
-		navigate("/scan");
-		window.location.reload();
-	};
 	const startCamera = async () => {
 		try {
 			const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-			if (videoRef.current) {
-				videoRef.current.srcObject = stream;
-				videoRef.current.play();
-			}
+			videoRef.current.srcObject = stream;
+			videoRef.current.play();
 		} catch (err) {
 			console.error("Error accessing camera:", err);
 		}
 	};
 
 	const stopCamera = () => {
-		if (videoRef.current && videoRef.current.srcObject) {
+		if (videoRef.current.srcObject) {
 			const stream = videoRef.current.srcObject;
 			const tracks = stream.getTracks();
 			tracks.forEach((track) => track.stop());
@@ -53,24 +40,23 @@ const Capture = () => {
 
 	useEffect(() => {
 		startCamera();
-
 		return () => {
 			stopCamera(); // Stop the camera on unmount
 		};
 	}, []);
 
 	return (
-		<div className="bg-black text-white min-h-screen flex flex-col items-center">
+		<div className="bg-black text-white min-h-screen flex flex-col items-center p-6">
 			{/* Back Button */}
 			<button
-				onClick={handleBack} // Navigate back to the previous page
-				className="absolute top-4 left-4 bg-gray-600 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded"
+				onClick={() => console.log("back")} // Replace with actual navigation
+				className="absolute top-6 left-6 bg-gray-700 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded-full shadow"
 			>
 				Back
 			</button>
 
 			{/* Title Section */}
-			<h1 className="text-2xl md:text-4xl font-heading mt-20 mb-8">
+			<h1 className="text-3xl md:text-5xl font-bold mt-14 mb-6 text-center">
 				Capture Your Image
 			</h1>
 			<p className="text-lg md:text-xl mb-12 text-center">
@@ -98,7 +84,7 @@ const Capture = () => {
 								Capture Again
 							</button>
 							<button
-								onClick={handleContinue} // Navigate to reveal results demo with the image
+								onClick={() => alert("Continue to the next step")} // Replace with your continue function
 								className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-full shadow"
 							>
 								Continue
@@ -110,7 +96,7 @@ const Capture = () => {
 						{isCameraActive && (
 							<video
 								ref={videoRef}
-								className="w-full max-w-md rounded-lg mb-4"
+								className="w-full max-w-md rounded-lg mb-4 border border-gray-600 shadow-lg"
 								autoPlay
 								muted
 							/>
@@ -123,7 +109,7 @@ const Capture = () => {
 						></canvas>
 						<button
 							onClick={captureImage}
-							className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+							className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full shadow"
 						>
 							Capture Image
 						</button>
@@ -134,4 +120,4 @@ const Capture = () => {
 	);
 };
 
-export default Capture;
+export default Aw;

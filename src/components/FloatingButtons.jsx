@@ -1,31 +1,57 @@
 import homeIcon from "../assets/home.svg";
 import scanIcon from "../assets/scan.png";
+import { Link } from "react-router-dom";
 
 const FloatingButtons = () => {
 	return (
-		<div className="fixed left-1/2 bottom-4 transform -translate-x-1/2 rounded-full border border-white">
-			<div className="flex justify-center items-center p-2 rounded-full border border-white bg-black bg-opacity-5">
-				<nav className="flex space-x-4">
-					<a
-						href="#"
-						className="flex items-center justify-center p-2 hover:bg-gray-700 rounded-full transition"
+		<div className="fixed left-1/2 bottom-4 transform -translate-x-1/2 z-10  ">
+			<div className="flex justify-center items-center p-2 rounded-full border-2 border-white bg-black bg-opacity-50 shadow-lg">
+				<nav className="flex space-x-4 ">
+					<Link
+						to="/"
+						className="flex items-center justify-center p-2 bg-purple-500 rounded-full transition relative group"
 					>
+						<div className="absolute inset-0 rounded-full border-2 border-white transform scale-110 group-hover:scale-125 transition"></div>
 						<img
 							src={homeIcon}
 							alt="home"
-							className="h-6 w-6 text-white filter invert "
+							className="h-6 w-6 text-white filter invert relative z-10"
 						/>
-					</a>
-					<a
-						href="#"
-						className="flex items-center justify-center p-2 hover:bg-gray-700 rounded-full transition"
+					</Link>
+
+					<Link
+						to="/scan"
+						className="flex items-center justify-center p-2 bg-purple-500 rounded-full transition relative group"
 					>
+						<div className="absolute inset-0 rounded-full border-2 border-white transform scale-110 group-hover:scale-125 transition"></div>
 						<img
 							src={scanIcon}
 							alt="scan"
-							className="h-6 w-6 text-white filter invert "
+							className="h-6 w-6 text-white filter invert relative z-10"
 						/>
-					</a>
+					</Link>
+					<Link
+						to="/scan"
+						className="flex items-center justify-center p-2 bg-purple-500 rounded-full transition relative group"
+					>
+						<div className="absolute inset-0 rounded-full border-2 border-white transform scale-110 group-hover:scale-125 transition"></div>
+						<img
+							src={scanIcon}
+							alt="scan"
+							className="h-6 w-6 text-white filter invert relative z-10"
+						/>
+					</Link>
+					<Link
+						to="/scan"
+						className="flex items-center justify-center p-2 bg-purple-500 rounded-full transition relative group"
+					>
+						<div className="absolute inset-0 rounded-full border-2 border-white transform scale-110 group-hover:scale-125 transition"></div>
+						<img
+							src={scanIcon}
+							alt="scan"
+							className="h-6 w-6 text-white filter invert relative z-10"
+						/>
+					</Link>
 				</nav>
 			</div>
 		</div>
