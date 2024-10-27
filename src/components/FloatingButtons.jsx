@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { useLocation } from "react-router-dom";
+import IconLink from "./IconLink";
 import homeIcon from "../assets/home.svg";
 import scanIcon from "../assets/scan.png";
 import analysis from "../assets/data-analysis.png";
@@ -35,125 +36,72 @@ const FloatingButtons = () => {
 		<div className="fixed left-1/2 bottom-4 transform -translate-x-1/2 z-10">
 			<div className="flex justify-center items-center p-2 rounded-full border-2 border-white bg-black bg-opacity-50 shadow-lg">
 				<nav className="flex space-x-4">
-					<Link
+					<IconLink
 						to="/"
-						className={getButtonClass("/")}
-						onMouseEnter={() => handleMouseEnter("Home")}
-						onMouseLeave={handleMouseLeave}
-						onClick={() => handleClick("Home")}
-					>
-						<div className="absolute inset-0 rounded-full border-2 border-white transform scale-110 group-hover:scale-125 transition"></div>
-						<img
-							src={homeIcon}
-							alt="home"
-							className="h-6 w-6 text-white filter invert relative z-10"
-						/>
-						{(activeLabel === "Home" || clickedLabel === "Home") && (
-							<div className="absolute bottom-full mb-2 text-center text-white text-sm">
-								Home
-							</div>
-						)}
-					</Link>
-
-					<Link
+						icon={homeIcon}
+						label="Home"
+						activeLabel={activeLabel}
+						clickedLabel={clickedLabel}
+						handleMouseEnter={handleMouseEnter}
+						handleMouseLeave={handleMouseLeave}
+						handleClick={handleClick}
+						getButtonClass={getButtonClass}
+					/>
+					<IconLink
 						to="/scan"
-						className={getButtonClass("/scan")}
-						onMouseEnter={() => handleMouseEnter("Scan")}
-						onMouseLeave={handleMouseLeave}
-						onClick={() => handleClick("Scan")}
-					>
-						<div className="absolute inset-0 rounded-full border-2 border-white transform scale-110 group-hover:scale-125 transition"></div>
-						<img
-							src={scanIcon}
-							alt="scan"
-							className="h-6 w-6 text-white filter invert relative z-10"
-						/>
-						{(activeLabel === "Scan" || clickedLabel === "Scan") && (
-							<div className="absolute bottom-full mb-2 text-center text-white text-sm">
-								Scan
-							</div>
-						)}
-					</Link>
-
-					<Link
+						icon={scanIcon}
+						label="Scan"
+						activeLabel={activeLabel}
+						clickedLabel={clickedLabel}
+						handleMouseEnter={handleMouseEnter}
+						handleMouseLeave={handleMouseLeave}
+						handleClick={handleClick}
+						getButtonClass={getButtonClass}
+					/>
+					<IconLink
 						to="/reveal-results-demo"
-						className={getButtonClass("/reveal-results-demo")}
-						onMouseEnter={() => handleMouseEnter("Results")}
-						onMouseLeave={handleMouseLeave}
-						onClick={() => handleClick("Results")}
-					>
-						<div className="absolute inset-0 rounded-full border-2 border-white transform scale-110 group-hover:scale-125 transition"></div>
-						<img
-							src={results}
-							alt="results"
-							className="h-6 w-6 text-white filter invert relative z-10"
-						/>
-						{(activeLabel === "Results" || clickedLabel === "Results") && (
-							<div className="absolute bottom-full mb-2 text-center text-white text-sm">
-								Results
-							</div>
-						)}
-					</Link>
-
-					<Link
+						icon={results}
+						label="Results"
+						activeLabel={activeLabel}
+						clickedLabel={clickedLabel}
+						handleMouseEnter={handleMouseEnter}
+						handleMouseLeave={handleMouseLeave}
+						handleClick={handleClick}
+						getButtonClass={getButtonClass}
+					/>
+					<IconLink
 						to="/analysis"
-						className={getButtonClass("/analysis")}
-						onMouseEnter={() => handleMouseEnter("Analysis")}
-						onMouseLeave={handleMouseLeave}
-						onClick={() => handleClick("Analysis")}
-					>
-						<div className="absolute inset-0 rounded-full border-2 border-white transform scale-110 group-hover:scale-125 transition"></div>
-						<img
-							src={analysis}
-							alt="analysis"
-							className="h-6 w-6 text-white filter invert relative z-10"
-						/>
-						{(activeLabel === "Analysis" || clickedLabel === "Analysis") && (
-							<div className="absolute bottom-full mb-2 text-center text-white text-sm">
-								Analysis
-							</div>
-						)}
-					</Link>
-
-					<Link
-						to="/more"
-						className={getButtonClass("/more")}
-						onMouseEnter={() => handleMouseEnter("More")}
-						onMouseLeave={handleMouseLeave}
-						onClick={() => handleClick("More")}
-					>
-						<div className="absolute inset-0 rounded-full border-2 border-white transform scale-110 group-hover:scale-125 transition"></div>
-						<img
-							src={more}
-							alt="more"
-							className="h-6 w-6 text-white filter invert relative z-10"
-						/>
-						{(activeLabel === "More" || clickedLabel === "More") && (
-							<div className="absolute bottom-full mb-2 text-center text-white text-sm">
-								More
-							</div>
-						)}
-					</Link>
-
-					<Link
+						icon={analysis}
+						label="Analysis"
+						activeLabel={activeLabel}
+						clickedLabel={clickedLabel}
+						handleMouseEnter={handleMouseEnter}
+						handleMouseLeave={handleMouseLeave}
+						handleClick={handleClick}
+						getButtonClass={getButtonClass}
+					/>
+					<IconLink
 						to="/messenger"
-						className={getButtonClass("/messenger")}
-						onMouseEnter={() => handleMouseEnter("Messenger")}
-						onMouseLeave={handleMouseLeave}
-						onClick={() => handleClick("Messenger")}
-					>
-						<div className="absolute inset-0 rounded-full border-2 border-white transform scale-110 group-hover:scale-125 transition"></div>
-						<img
-							src={messenger}
-							alt="messenger"
-							className="h-6 w-6 text-white filter invert relative z-10"
-						/>
-						{(activeLabel === "Messenger" || clickedLabel === "Messenger") && (
-							<div className="absolute bottom-full mb-2 text-center text-white text-sm">
-								Messenger
-							</div>
-						)}
-					</Link>
+						icon={messenger}
+						label="Messenger"
+						activeLabel={activeLabel}
+						clickedLabel={clickedLabel}
+						handleMouseEnter={handleMouseEnter}
+						handleMouseLeave={handleMouseLeave}
+						handleClick={handleClick}
+						getButtonClass={getButtonClass}
+					/>
+					<IconLink
+						to="/more"
+						icon={more}
+						label="More"
+						activeLabel={activeLabel}
+						clickedLabel={clickedLabel}
+						handleMouseEnter={handleMouseEnter}
+						handleMouseLeave={handleMouseLeave}
+						handleClick={handleClick}
+						getButtonClass={getButtonClass}
+					/>
 				</nav>
 			</div>
 		</div>

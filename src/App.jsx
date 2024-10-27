@@ -1,12 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Scan from "./pages/Scan";
-import CaptureRight from "./modal/CaptureRight";
-import CaptureLeft from "./modal/CaptureLeft";
-import CaptureFront from "./modal/CaptureFront";
+import Analysis from "./pages/Analysis";
 import FloatingButtons from "./components/FloatingButtons";
 import Capture from "./modal/Capture";
 import RevealResultsDemo from "./pages/RevealResultDemo";
+import Messenger from "./pages/Messenger";
 const App = () => {
 	return (
 		<Router>
@@ -16,9 +15,8 @@ const App = () => {
 				<Route path="/scan" element={<Scan />} />
 				<Route path="/scan/capture" element={<Capture />} />
 				<Route path="/reveal-results-demo" element={<RevealResultsDemo />} />
-				<Route path="/scan/right" element={<CaptureRight />} />
-				<Route path="/scan/left" element={<CaptureLeft />} />
-				<Route path="/scan/front" element={<CaptureFront />} />
+				<Route path="/analysis" element={<Analysis />} />
+				<Route path="/messenger" element={<Messenger />} />
 			</Routes>
 		</Router>
 	);

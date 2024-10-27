@@ -70,7 +70,7 @@ const Capture = () => {
 			</button>
 
 			{/* Title Section */}
-			<h1 className="text-2xl md:text-4xl font-heading mt-20 mb-8">
+			<h1 className="text-2xl md:text-4xl font-heading mt-8 mb-8">
 				Capture Your Image
 			</h1>
 			<p className="text-lg md:text-xl mb-12 text-center">
