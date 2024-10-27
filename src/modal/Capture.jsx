@@ -10,9 +10,7 @@ const Capture = () => {
 
 	const handleContinue = () => {
 		navigate("/results", { state: { image: capturedImage } });
-		window.location.reload();
 	};
-
 	const handleBack = () => {
 		navigate("/scan");
 		window.location.reload();
