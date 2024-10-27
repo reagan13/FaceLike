@@ -30,7 +30,7 @@ const Scan = () => {
 	return (
 		<div className="bg-black text-white min-h-screen flex flex-col">
 			{/* Title Section */}
-			<section className="flex flex-col items-center justify-center text-center pt-16 pb-5">
+			<section className="flex flex-col items-center justify-center text-center pt-10 pb-5">
 				<h1 className="text-4xl md:text-6xl font-heading mb-4">
 					Facial Feature Analysis
 				</h1>
@@ -47,7 +47,7 @@ const Scan = () => {
 						<img
 							src={Men}
 							alt="Facial Analysis"
-							className="rounded-lg shadow-lg mb-4 size-96"
+							className="rounded-lg shadow-lg mb-4 size-80"
 						/>
 						<button
 							onClick={openCaptureRight}
@@ -61,11 +61,11 @@ const Scan = () => {
 							Your scanned image will be uploaded here.
 						</p>
 					</div>
-					<div className="flex flex-col items-center justify-center mt-4 p-6  rounded-lg shadow-lg ">
+					<div className="flex flex-col items-center justify-center mt-2 p-6  rounded-lg shadow-lg ">
 						<img
 							src={Discord} // Replace with your Discord image URL
 							alt="Discord"
-							className="size-80 mb-4" // Adjusted to your specified size
+							className="size-80 mb-2" // Adjusted to your specified size
 							style={{ border: "2px solid #5865F2", borderRadius: "12px" }} // Adding a border with rounded corners
 						/>
 						<button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition transform duration-200 hover:scale-105 mt-2">

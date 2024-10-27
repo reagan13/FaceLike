@@ -1,87 +1,120 @@
+import { Link } from "react-router-dom";
+import { FaRobot, FaUserFriends, FaLightbulb, FaSmile } from "react-icons/fa";
+
 const Home = () => {
 	return (
-		<div className="bg-black text-white min-h-screen flex flex-col">
+		<div className="bg-black text-white font-sans">
 			{/* Hero Section */}
-			<section className="flex flex-col items-center justify-center text-center py-10 md:py-20">
-				<h1 className="text-3xl md:text-5xl font-heading mb-4">
-					Discover Your Potential
+			<section className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-black to-gray-900 text-center px-4">
+				<h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
+					FaceLike
 				</h1>
-				<p className="text-base md:text-lg mb-8">
+				<p className="text-lg md:text-2xl max-w-lg mx-auto mb-8 text-gray-300">
 					Unlock insights about your facial features with our AI-powered
 					analysis tool.
 				</p>
-				<a
-					href="/upload"
-					className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 md:px-6 rounded transition duration-300"
+
+				<Link
+					to="/scan"
+					className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300"
 				>
 					Analyze Your Face
-				</a>
+				</Link>
 			</section>
 
 			{/* Features Section */}
-			<section className="py-10 md:py-20 px-4">
-				<h2 className="text-2xl md:text-3xl font-heading text-center mb-12">
-					Features
-				</h2>
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-					<div className="bg-gray-800 p-4 md:p-6 rounded-lg">
-						<h3 className="text-lg md:text-xl font-semibold mb-4">
+			<section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-gray-900 to-black px-6">
+				<h2 className="text-3xl md:text-4xl font-bold mb-12">Our Features</h2>
+				<p className="text-gray-400 text-center mb-8 max-w-xl">
+					Explore the unique features FaceLike has to offer. Each tool is
+					designed to provide insightful, user-friendly experiences tailored to
+					your needs.
+				</p>
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl">
+					<div className="bg-gray-800 p-6 rounded-lg hover:shadow-lg transform hover:-translate-y-2 transition-all duration-300">
+						<FaRobot className="text-4xl text-blue-400 mb-3" />
+						<h3 className="text-xl font-semibold text-blue-400 mb-3">
 							AI-Powered Insights
 						</h3>
-						<p>
-							Get detailed analysis of your facial features with cutting-edge AI
-							technology.
+						<p className="text-gray-300">
+							Our advanced AI technology analyzes your facial features in
+							detail, providing you with comprehensive insights into your unique
+							attributes.
 						</p>
 					</div>
-					<div className="bg-gray-800 p-4 md:p-6 rounded-lg">
-						<h3 className="text-lg md:text-xl font-semibold mb-4">
+					<div className="bg-gray-800 p-6 rounded-lg hover:shadow-lg transform hover:-translate-y-2 transition-all duration-300">
+						<FaUserFriends className="text-4xl text-blue-400 mb-3" />
+						<h3 className="text-xl font-semibold text-blue-400 mb-3">
 							User-Friendly Interface
 						</h3>
-						<p>
-							Easy to navigate with a seamless user experience designed for
-							everyone.
+						<p className="text-gray-300">
+							Navigating FaceLike is a breeze, designed with you in mind. Our
+							intuitive layout ensures a seamless experience from start to
+							finish.
 						</p>
 					</div>
-					<div className="bg-gray-800 p-4 md:p-6 rounded-lg">
-						<h3 className="text-lg md:text-xl font-semibold mb-4">
+					<div className="bg-gray-800 p-6 rounded-lg hover:shadow-lg transform hover:-translate-y-2 transition-all duration-300">
+						<FaLightbulb className="text-4xl text-blue-400 mb-3" />
+						<h3 className="text-xl font-semibold text-blue-400 mb-3">
 							Personalized Recommendations
 						</h3>
-						<p>
+						<p className="text-gray-300">
 							Receive tailored insights and tips based on your unique facial
-							features.
+							features, helping you enhance your natural beauty.
 						</p>
 					</div>
 				</div>
 			</section>
 
 			{/* How It Works Section */}
-			<section className="py-10 md:py-20 px-4 bg-gray-900">
-				<h2 className="text-2xl md:text-3xl font-heading text-center mb-12">
-					How It Works
-				</h2>
-				<div className="text-center">
-					<p className="mb-4">1. Upload your photo</p>
-					<p className="mb-4">2. Get instant analysis</p>
-					<p>3. Explore your insights and recommendations</p>
+			<section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black to-gray-900 px-6 text-center">
+				<h2 className="text-3xl md:text-4xl font-bold mb-12">How It Works</h2>
+				<p className="text-gray-400 mb-6 max-w-xl">
+					Follow these simple steps to unlock your facial analysis:
+				</p>
+				<div className="space-y-6 text-gray-300">
+					<p className="flex items-center justify-center space-x-2">
+						<span className="text-2xl font-bold text-blue-500">1.</span>
+						<span>Upload your photo using our easy upload feature.</span>
+					</p>
+					<p className="flex items-center justify-center space-x-2">
+						<span className="text-2xl font-bold text-blue-500">2.</span>
+						<span>
+							Our AI processes the image and provides instant analysis.
+						</span>
+					</p>
+					<p className="flex items-center justify-center space-x-2">
+						<span className="text-2xl font-bold text-blue-500">3.</span>
+						<span>
+							Explore your insights, recommendations, and share with friends!
+						</span>
+					</p>
 				</div>
 			</section>
 
 			{/* Testimonials Section */}
-			<section className="py-10 md:py-20 px-4">
-				<h2 className="text-2xl md:text-3xl font-heading text-center mb-12">
+			<section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-gray-900 to-black px-6">
+				<h2 className="text-3xl md:text-4xl font-bold mb-12">
 					What Our Users Say
 				</h2>
-				<div className="flex flex-col items-center">
-					<blockquote className="italic text-lg mb-4">
-						&quot;This app helped me understand my features like never
-						before!&quot;
+				<div className="bg-gray-800 p-8 rounded-lg max-w-lg mx-auto shadow-lg text-center">
+					<blockquote className="italic text-lg text-gray-300 mb-4">
+						&quot;FaceLike transformed the way I see my features! The analysis
+						was spot on and the recommendations helped me a lot!&quot;
 					</blockquote>
-					<p>- Satisfied User</p>
+					<p className="text-blue-400 font-semibold">- John D.</p>
+				</div>
+				<div className="bg-gray-800 p-8 rounded-lg max-w-lg mx-auto shadow-lg text-center mt-4">
+					<blockquote className="italic text-lg text-gray-300 mb-4">
+						&quot;I love how easy it is to use FaceLike. The insights are super
+						helpful and the interface is very intuitive!&quot;
+					</blockquote>
+					<p className="text-blue-400 font-semibold">- Sarah K.</p>
 				</div>
 			</section>
 
 			{/* Footer */}
-			<footer className="bg-gray-800 text-gray-400 py-4 text-center">
+			<footer className="bg-gray-800 text-gray-400 py-6 text-center">
 				<p>© 2024 FaceLike. All rights reserved.</p>
 			</footer>
 		</div>
