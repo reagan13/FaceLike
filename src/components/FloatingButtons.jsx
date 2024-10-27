@@ -59,7 +59,7 @@ const FloatingButtons = () => {
 						getButtonClass={getButtonClass}
 					/>
 					<IconLink
-						to="/reveal-results-demo"
+						to="/results"
 						icon={results}
 						label="Results"
 						activeLabel={activeLabel}

@@ -9,7 +9,7 @@ const Capture = () => {
 	const navigate = useNavigate();
 
 	const handleContinue = () => {
-		navigate("/reveal-results-demo", { state: { image: capturedImage } });
+		navigate("/results", { state: { image: capturedImage } });
 		window.location.reload();
 	};
 
